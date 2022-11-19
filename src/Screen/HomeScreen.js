@@ -6,9 +6,12 @@ import {
   StatusBar,
   StyleSheet,
   ScrollView,
+  TextInput,
+  Fragment,
+  Button,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import {Button, DefaultButton} from '../Components/Buttons';
+import {DefaultButton} from '../Components/Buttons';
 import {COLORS} from '../Utils';
 import {DefaultTextInput} from '../Components/TextInputs';
 
@@ -89,7 +92,7 @@ const HomeScreen = () => {
   };
 
   const sendTx = async () => {
-    const {data} = await BdkRn.quickSend({
+    const {data} = await BdkRn.broadcastTx({
       address: recipient,
       amount: amount,
     });
@@ -102,7 +105,21 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{marginHorizontal: 20}}>
-        <DefaultTextInput />
+        <View>
+          <TextInput
+            style={styles.input}
+            multiline
+            value={mnemonic}
+            onChangeText={setMnemonic}
+            textAlignVertical="top"
+          />
+        </View>
+        <View style={styles.balanceSection}>
+          <Text style={styles.balanceText} selectable>
+            {'Balance: '}
+          </Text>
+          <Text selectable>{balance ? balance : '0'} Sats</Text>
+        </View>
         <View style={styles.content}>
           <View style={{marginTop: 20}}>
             {displayText && <Text selectable>Response: {displayText}</Text>}
@@ -117,7 +134,25 @@ const HomeScreen = () => {
           <DefaultButton onPress={createDescriptor} title="Create Descriptor" />
           <DefaultButton onPress={syncWallet} title="getBalance" />
           <DefaultButton onPress={getAddress} title="getAddress" />
-          <DefaultButton onPress={sendTx} title="Send BitCoin" />
+          {/* <DefaultButton onPress={sendTx} title="Send BitCoin" /> */}
+          <View style={styles.sendSection}>
+            <TextInput
+              style={styles.input}
+              placeholder="recipient Address"
+              onChangeText={setRecipient}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Amount (in sats)"
+              onChangeText={e => setAmount(parseInt(e))}
+            />
+            {/* <Button
+              title="Send Transaction"
+              style={styles.methodButton}
+              onPress={sendTx}
+            /> */}
+            <DefaultButton onPress={sendTx} title="Send BitCoin" />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -133,10 +168,10 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
   },
-  container: {
-    padding: 20,
-    alignItems: 'center',
-  },
+  // container: {
+  //   padding: 20,
+  //   alignItems: 'center',
+  // },
   headerSection: {
     marginTop: 15,
     width: '90%',
@@ -207,7 +242,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   input: {
-    borderColor: bitcoinColor,
+    borderColor: COLORS.BitCoin,
     borderWidth: 2,
     width: '80%',
     padding: 5,
