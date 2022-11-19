@@ -1,4 +1,4 @@
-# REACT NATIVE BITCOIN USING BDK
+# REACT NATIVE BDK
 
 [![follow @victorebukaezea](https://img.shields.io/twitter/follow/victorebukaezea.svg?style=for-the-badge&logo=TWITTER&logoColor=FFFFFF&labelColor=00aced&logoWidth=20&color=lightgray)](https://twitter.com/victorebukaezea)
 
@@ -19,7 +19,3 @@ Install: `yarn` or `yarn install`
 `cd ios && pod install && cd ..`
 
 Run Project Locally: `npx react-native run-ios` or `npx react-native run-android`
-
-<p float="left">
-  <img src="screenshot/Bitcoin.PNG?raw=true" width="360" />
-</p>
