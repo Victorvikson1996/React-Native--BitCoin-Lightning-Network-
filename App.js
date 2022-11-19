@@ -18,21 +18,10 @@ import {
   View,
 } from 'react-native';
 
-import {DefaultButton} from './src/Components/Buttons';
-
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
+import {Navigation, TabNavigator} from './src/Components/Navigation';
 
 const App = () => {
-  return (
-    <SafeAreaView>
-      <StatusBar />
-
-      <View>
-        <DefaultButton />
-      </View>
-    </SafeAreaView>
-  );
+  return <Navigation />;
 };
 
 const styles = StyleSheet.create({

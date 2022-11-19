@@ -17,7 +17,7 @@ const DefaultButton = ({title, onPress = () => {}}) => {
         height: 55,
         width: '80%',
         backgroundColor: COLORS.BitCoin,
-        marginVertical: 20,
+        marginVertical: 10,
         justifyContent: 'center',
         alignItems: 'center',
       }}

@@ -1385,11 +1385,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@synonymdev/result@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@synonymdev/result/-/result-0.0.2.tgz#c526743e4f1d3ec1d24a1952281b5daa77ba3fbc"
-  integrity sha512-Ni5qknulcf350qfPVTw3DWXqT2i6K68BoFc18zlqIAj9YA2RUOIJsKTdemX31i3wSma5LRHVcGLESVga16iAag==
-
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -2053,11 +2048,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-"bdk-rn@https://github.com/LtbLightning/bdk-rn.git":
-  version "0.1.0"
-  resolved "https://github.com/LtbLightning/bdk-rn.git#6ae7448822d6213420f2f1de230a080af5bd11cf"
+bdk-rn@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/bdk-rn/-/bdk-rn-0.1.1.tgz#c649dd69a68a77687085c223039e67ed4988957b"
+  integrity sha512-ABgzMwBfXLVR3ncH0f1TezdI5HrQqKRiYPOq7nUjbdw992jvcDnsEfPwjKDLCF6koeyfsxDrNAk4UV3aL0ghIg==
   dependencies:
-    "@synonymdev/result" "0.0.2"
     adm-zip "^0.5.9"
     is_js "^0.9.0"
     request "^2.88.2"
