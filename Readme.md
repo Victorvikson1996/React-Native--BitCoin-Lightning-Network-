@@ -9,7 +9,7 @@
 - LND SUPPORT
 
 This Project has the followwing features
-`create bitcoin wallet account`,` send bitcoin`, `Generating Mnemonic Phrase`, "Bitcoin Balance
+`create bitcoin wallet account` `send bitcoin` `Generating Mnemonic Phrase`, `getWalletBalance`
 
 ## Install & Build
 
